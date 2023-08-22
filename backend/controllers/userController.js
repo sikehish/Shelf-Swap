@@ -12,6 +12,7 @@ const { requestReset, passwordReset } = require('../services/passwords');
 
 
 // Set up routes
+//Why express-async-handler? https://dev.to/aneeqakhan/setup-error-middleware-and-async-handler-299i
 exports.userSignup=asyncWrapper(async (req, res) => {
   // try {
     let { name, email, password, confirmPassword } = req.body;
