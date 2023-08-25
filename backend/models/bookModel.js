@@ -40,22 +40,8 @@ const bookSchema = new mongoose.Schema({
   timestamps: true
 });
 
-//Using pre middleware function to utilise the data validation used in the schema https://mongoosejs.com/docs/validation.html
-userSchema.pre('save', async function (next) {
-  const user = this;
-  if (user.isModified('password')) { 
-    //salt with 10 rounds will be generated and then the password will be hashed
-      user.password=await bcrypt.hash(user.password, 10)
-}
-  next()
-}
-)
-
-userSchema.methods.createToken = function () {
-  return jwt.sign({ id: this.id }, process.env.JWT_KEY, { expiresIn: "2d" });    
-};
 
 // Create the User model
-const User = mongoose.model('User', userSchema);
+const Book = mongoose.model('Book', bookSchema);
 
-module.exports = User;
+module.exports = Book;
