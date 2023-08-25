@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { isEmail, isStrongPassword } = require('validator');
 
 // Define the User schema
 const bookSchema = new mongoose.Schema({
@@ -9,14 +8,13 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: [3, 'Your name cannot be less than 3 characters'],
-    maxlength: [20,'Your name cannot exceed 20 characters']
+    minlength: [3, 'Your title cannot be less than 3 characters'],
+    maxlength: [20,'Your title cannot exceed 20 characters']
   },
   description: {
     type: String,
     required: true,
     trim: true,
-    validate: [isEmail,'Entered email address not valid!']
   },
   genre:{   
     type: [String],
