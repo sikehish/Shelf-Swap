@@ -18,6 +18,11 @@ const bookSchema = new mongoose.Schema({
     trim: true,
     validate: [isEmail,'Entered email address not valid!']
   },
+  genre:{   
+    type: [String],
+    required: [true, "Genre selection is necessary"]
+
+  },
   uid: {
     type:String,
     required: true
@@ -28,8 +33,8 @@ const bookSchema = new mongoose.Schema({
   },
   buyPrice:{ //If the user doesnt want to sell the book, then this field should be left empty.
     type :Number ,
-    
   }
+  //Location of the book will be determined by the seller's location so no field for location
 
 },{
   timestamps: true
