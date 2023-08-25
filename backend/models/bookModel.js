@@ -29,6 +29,10 @@ const bookSchema = new mongoose.Schema({
   },
   buyPrice:{ //If the user doesnt want to sell the book, then this field should be left empty.
     type :Number ,
+  },
+  isBought:{ //If the book is rented, then the user can set this to true, and so the book wont be displayed to other users
+    type: Boolean,
+    default: false
   }
   //Location of the book will be determined by the seller's location so no field for location
 

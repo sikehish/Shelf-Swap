@@ -32,10 +32,14 @@ const userSchema = new mongoose.Schema({
     type: [String],
     required: [true, "Genre selection is necessary"]
   },
+  discoverable:{ //if the user wants to be visible in the bookWorms list(for privacy)
+    type: Boolean,
+    default: true
+  },
   coordinates: {
     type:{
-      lat : String,
-      lng : String
+      lat : String, //or Double
+      lng : String //or Double
   }
   },
   verified: {
