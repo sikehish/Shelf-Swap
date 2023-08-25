@@ -25,6 +25,19 @@ const userSchema = new mongoose.Schema({
     minlength: [8, 'Password must be at least 8 characters'],
     validate: [isStrongPassword, 'Password not strong enough']
   },
+  wishlist: {
+    type: [String] //array of Book ids from Book collection
+  },
+  genre: {
+    type: [String],
+    required: [true, "Genre selection is necessary"]
+  },
+  coordinates: {
+    type:{
+      lat : String,
+      lng : String
+  }
+  },
   verified: {
     type: Boolean,
     required: true,
