@@ -1,2 +1,2 @@
-# Shelf-Swap-IEM
-A book renting application created as part of a hackathon at IEM, Kolkata
+# Shelf Swap
+Your one stop shop for renting books and networking with other book lovers!
